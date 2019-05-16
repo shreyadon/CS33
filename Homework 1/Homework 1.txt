@@ -1,0 +1,33 @@
+Shreya Donepudi 
+Section 1B 
+
+Homework 1
+
+2.71
+A.
+
+The function is originally supposed to perform a sign extension, but it does not when extracting a byte into a 32-bit int.
+
+B. 
+
+int xbyte(packed_t word, int bytenum)
+{
+	return (word << ((3 - bytenum) << 3)) >> 24;
+}
+
+2.82
+A. (x<y) == (-x>-y) 
+No, this expression will not yield 1 when x = Tmin and y = 0. 
+
+B. ((x+y)<<4) + y-x == 17*y+15*x
+Yes, this expression will always yield 1. Due to the Associative, commutative, distributive properties. 
+
+C. ~x+~y+1 == ~(x+y)
+Yes, this expression will always yield 1 because of negation. 
+~x+~y+1 = (-x-1)+(-y-1)+1 = -(x+y)-1 = ~(x+y)
+
+D. (ux-uy) == -(unsigned)(y-x)
+Yes, this expression will always yield 1 because operators act regardless of the status(signed/unsigned) of integers/ 
+
+E. ((x>>2) <<2) <= x
+Yes, this expression will always yield 1 because right shifting rounds to minus infinity. Shifting x will cause it to lose value but never gain value.
